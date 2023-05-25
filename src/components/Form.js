@@ -31,14 +31,14 @@ export default function Form() {
                 <form id='form' className='flex flex-col' onSubmit={handleSubmit(onSubmit)}>
                     <input type="text" {...register("name",{required: true,maxLength: 20})} placeholder='name' />
                     {errors.name?.type === "required" && "this field is required"}
-                    <input type="text" {...register("email")} placeholder='email' />
+                    <input type="text" {...register("email",{required:true})} placeholder='email' />
                     {errors.email?.type === "required" && "this field  is required"}
-                    <input type="text" {...register("companyname")} placeholder='company name' />
+                    <input type="text" {...register("companyname",{required:true})} placeholder='company name' />
                     {errors.companyname?.type === "required" && "this field is required"}
                     <input type="text" {...register("mobile", { required : true, maxLength: 10 })} placeholder='phone number' />
                     {errors.mobile?.type === "required" && "this field is required"}
                     {errors.mobile?.type === "maxLength" && "Max Length Exceed"}
-                    <input type="text" {...register("requirement")} placeholder='requirement' />
+                    <input type="text" {...register("requirement",{required:true})} placeholder='requirement' />
                        {errors.requirement?.type === "required" && " this field required"}
                        <input type="text" name="lead_types_id" value="sandbox" />
 
@@ -46,9 +46,6 @@ export default function Form() {
                     <button className='btn'>Sign In</button>
                 </form>
 
-            </div>
-            <div className="col-2">
-              
             </div>
         </div>
     </section>
